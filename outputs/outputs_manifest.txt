@@ -1,7 +1,7 @@
-timestamp: 2026-01-19T17:52:58.817739Z
-git_commit: 9a70bb560ddaae10fa6fd9d7f9be007ed080bacf
+timestamp: 2026-01-19T18:15:33.659422Z
+git_commit: 46b991bda479d328653b76e69d1a86c92fdf82fc
 files:
-- model_card.md | 1.0 KB | Executive summary of model, metrics, and policy.
+- model_card.md | 1.8 KB | Executive summary of model, metrics, and policy.
 - model_comparison_validation.csv | 0.3 KB | Validation metrics for all models.
 - tuning_decision_tree.csv | 0.7 KB | Decision Tree tuning grid results.
 - tuning_random_forest.csv | 1.5 KB | Random Forest tuning grid results.
@@ -14,4 +14,4 @@ files:
 - confusion_matrix_validation_optimal.csv | 0.1 KB | Confusion table at optimal threshold.
 - threshold_sweep_validation.csv | 4.0 KB | Threshold sweep metrics on validation.
 - threshold_sensitivity.csv | 0.2 KB | Sensitivity of optimal threshold to payoff shifts.
-- outputs_manifest.txt | 0.0 KB | Manifest of exported outputs.
+- outputs_manifest.txt | 1.2 KB | Manifest of exported outputs.
