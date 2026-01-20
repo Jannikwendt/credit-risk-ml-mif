@@ -36,6 +36,9 @@ Model performance is summarized in `model_comparison_validation.csv`. The final 
 - Optimal threshold: approvals=2076, defaults among approved=303, approval_rate=0.820
 - Full tables are saved in `confusion_matrix_validation_050.csv` and `confusion_matrix_validation_optimal.csv`.
 
+## Assumptions & Interpretation
+The decision policy is based on stylized payoff assumptions (e.g., -5 for a default and +1 for a successful repayment). Under these assumptions, the optimal threshold is chosen to minimize expected loss (or maximize expected value). It is important to note that the resulting Expected Value (EV) may be negative if the baseline default rate is high or if the model’s discriminative power is limited. The sensitivity analysis (`threshold_sensitivity.csv`) further explores how the optimal threshold and corresponding EV shift under different cost-benefit calibrations, highlighting the dependence of the policy on these business assumptions.
+
 ## Limitations & Next Steps
 - Payoff assumptions are stylized; calibrate to bank economics.
 - Threshold chosen on validation; test remains untouched for final audit.

@@ -10,10 +10,11 @@ This repository contains a single, end-to-end notebook for a supervised credit r
   - `data/lending_club_test.csv`
 
 ### Outputs Policy
+Outputs are regenerated on Run All and overwrite existing artifacts; commit outputs only for the final snapshot; manifest is deterministic.
+
 All outputs are generated deterministically by the notebook and written to `outputs/`.
 The export step produces a manifest (`outputs/outputs_manifest.txt`) that records:
-- timestamp
 - git commit hash
-- file list, sizes, and brief purpose
+- file list, sizes, SHA256 hashes, and brief purpose
 
 Expected artifacts include model comparison tables, tuning tables, threshold sweep outputs, decisioning curves, and a model card. The outputs are derived artifacts only (no raw data), and the manifest is the single source of truth for what was exported in a given run.
