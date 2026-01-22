@@ -2,61 +2,40 @@
 
 This repository contains a single, end-to-end notebook for a supervised credit risk (PD) modeling workflow. The notebook is fully reproducible and produces a deterministic set of outputs for grading and review.
 
-### How to Run
-- Open `notebooks/credit_risk_project.ipynb`.
-- Restart Kernel & Run All.
-- The notebook reads only:
-  - `data/lending_club_train.csv`
-  - `data/lending_club_test.csv`
+# Reviewer Manual: Running and Inspecting the Project
 
-### Outputs Policy
-Outputs are regenerated on Run All and overwrite existing artifacts; commit outputs only for the final snapshot; manifest is deterministic.
+This project is designed to be fully transparent and reproducible. This manual explains how to view the underlying Python code and regenerate all results using Google Colab.
 
-All outputs are generated deterministically by the notebook and written to `outputs/`.
-The export step produces a manifest (`outputs/outputs_manifest.txt`) that records:
-- git commit hash
-- file list, sizes, SHA256 hashes, and brief purpose
+## 1. View and Inspect the Code
 
-Expected artifacts include model comparison tables, tuning tables, threshold sweep outputs, decisioning curves, and a model card. The outputs are derived artifacts only (no raw data), and the manifest is the single source of truth for what was exported in a given run.
+Reviewers can view the project in three different ways. Please note that **GitHub previews may collapse or hide code cells** to focus on results. To see the full implementation, comments, and explanations, we recommend opening the notebook in Google Colab.
 
-## Running and Inspecting the Project in Google Colab (Code + Outputs)
+### Option A: One-click Colab links (Recommended)
+These links open the notebook directly in the Google Colab environment:
+- **[Submission Snapshot (submission-v1)](https://colab.research.google.com/github/Jannikwendt/credit-risk-ml-mif/blob/submission-v1/notebooks/credit_risk_project.ipynb)**: Use this for grading. It is a frozen, immutable snapshot of the project.
+- **[Main Branch](https://colab.research.google.com/github/Jannikwendt/credit-risk-ml-mif/blob/main/notebooks/credit_risk_project.ipynb)**: The most recent "live" version of the code.
 
-While the `outputs/` folder contains the final generated results, the full logic, detailed explanations, and Python code live in `notebooks/credit_risk_project.ipynb`. To see and interact with the code, you should open the notebook in Google Colab rather than just browsing it on GitHub.
+### Option B: Manual Steps
+1. Go to [https://colab.research.google.com](https://colab.research.google.com).
+2. Click **File** → **Open notebook**.
+3. Select the **GitHub** tab.
+4. Paste the repository URL: `https://github.com/Jannikwendt/credit-risk-ml-mif`.
+5. Select `notebooks/credit_risk_project.ipynb` and click **Open Notebook**.
 
-### Option 1 — One-click Colab links (recommended)
-You can open the project in Colab using these links:
-- **[Main Branch](https://colab.research.google.com/github/Jannikwendt/credit-risk-ml-mif/blob/main/notebooks/credit_risk_project.ipynb)**: The most recent version of the project.
-- **[Submission Snapshot (submission-v1)](https://colab.research.google.com/github/Jannikwendt/credit-risk-ml-mif/blob/submission-v1/notebooks/credit_risk_project.ipynb)**: An immutable, graded version of the submission. Guarantees a frozen snapshot.
+### How to Ensure Code Cells Are Visible
+If the notebook opens and you only see text and charts:
+1. In the top menu, click **View** → **Expand sections**.
+2. This will ensure all Python code cells, internal comments, and logic blocks are visible.
+3. Above every code cell, you will find a "Goal/Inputs/Outputs" markdown block explaining exactly what that step does.
 
-### Option 2 — Manual Colab UI steps
-1. Go to [https://colab.research.google.com](https://colab.research.google.com)
-2. Click **File** → **Open notebook**
-3. Select the **GitHub** tab
-4. Paste this repository URL: `https://github.com/Jannikwendt/credit-risk-ml-mif`
-5. Select `notebooks/credit_risk_project.ipynb` from the list
-6. Click **Open Notebook**
+---
 
-### How to Make Sure Code Cells Are Visible
-If the notebook opens and you only see the text and charts (outputs):
-- Click **View** → **Expand sections** in the top menu.
-- This ensures all Python code cells are visible and not collapsed.
-- The notebook contains extensive markdown explanations above each code section to guide you through the modeling logic.
+## 2. Reproduce the Outputs Exactly (Google Colab)
 
-### Final Execution Instructions
-To regenerate all results and charts from scratch:
-- Click **Runtime** → **Restart runtime**
-- Click **Runtime** → **Run all**
-- **Note**: All outputs will be regenerated and will overwrite any existing artifacts in the `outputs/` folder within your Colab environment.
+Follow these steps to regenerate all project artifacts from scratch in the Colab cloud environment.
 
-## Run on Google Colab (Reproducibility Test)
-
-This section explains exactly how to reproduce the project outputs from scratch using Google Colab. Colab is a free cloud environment that requires no installation on your computer.
-
-### 1. Open Google Colab
-Go to: [https://colab.research.google.com](https://colab.research.google.com)
-
-### 2. Clone the repository in Colab
-In a new Colab cell, copy and paste the following commands to download the project code:
+### Step 1: Prepare the Environment
+In a new Colab code cell, copy and run these commands to download the frozen project snapshot:
 
 ```bash
 !git clone https://github.com/Jannikwendt/credit-risk-ml-mif.git
@@ -64,23 +43,16 @@ In a new Colab cell, copy and paste the following commands to download the proje
 !git fetch --all --tags
 !git checkout submission-v1
 ```
+*Note: The `submission-v1` tag guarantees you are running the exact logic and notebook version that was submitted.*
 
-**Why `submission-v1`?**
-We use the `submission-v1` tag because it is a frozen, graded snapshot of the project. This guarantees you are using the exact same notebook and logic as the submitted version.
-
-### 3. Upload the required data files
-The notebook only requires two data files:
-- `lending_club_train.csv`
-- `lending_club_test.csv`
-
-In a new cell, run this to upload the files from your computer:
+### Step 2: Upload the Data Files
+The project requires two input files. In a new cell, run:
 
 ```python
 from google.colab import files
 files.upload()
 ```
-
-Then, move the uploaded files into the correct folder:
+Upload `lending_club_train.csv` and `lending_club_test.csv` from your computer. Then, move them to the data folder:
 
 ```bash
 !mkdir -p data
@@ -88,20 +60,15 @@ Then, move the uploaded files into the correct folder:
 !mv lending_club_test.csv data/
 ```
 
-*Note: No other data files are needed. The PDF data dictionary is optional and not used by the code.*
-
-### 4. Install dependencies
-Run this command to install the exact versions of the libraries used in this project:
+### Step 3: Install Dependencies
+Run this to install the specific library versions used in the project:
 
 ```bash
 !pip install -r requirements.txt
 ```
 
-### 5. Run the notebook
-You have two options to run the analysis:
-
-**Option A (Recommended – Fully Automated):**
-This simulates a clean "Restart Kernel & Run All" and ensures full reproducibility.
+### Step 4: Execute and Regenerate
+Run all cells to regenerate the `outputs/` folder. You can do this manually (**Runtime** → **Run all**) or via the command line to simulate a fresh environment:
 
 ```bash
 !jupyter nbconvert --to notebook --execute notebooks/credit_risk_project.ipynb \
@@ -109,28 +76,18 @@ This simulates a clean "Restart Kernel & Run All" and ensures full reproducibili
   --ExecutePreprocessor.timeout=1200
 ```
 
-**Option B (Manual):**
-1. Navigate to the file browser on the left in Colab.
-2. Open `notebooks/credit_risk_project.ipynb`.
-3. Click **Runtime** → **Restart and run all**.
+---
 
-### 6. Verify outputs
-All results are written to the `outputs/` folder. You can list the files and view the manifest:
+## 3. Verify Success
 
-```bash
-!ls outputs
-!cat outputs/outputs_manifest.txt
-```
+Once the execution is finished, follow this checklist to verify the results:
 
-**Note:** `outputs_manifest.txt` is the single source of truth. It lists all generated artifacts, their sizes, and their unique SHA256 "digital fingerprints" (hashes).
+- [ ] **No Errors**: The notebook ran to completion without any red error messages.
+- [ ] **Outputs Generated**: Running `!ls outputs` shows a full list of CSV, PNG, and Markdown files.
+- [ ] **Final Report**: The file `outputs/final_report.md` exists and provides a human-readable executive summary of the results.
+- [ ] **Reproducibility Proof**: The file `outputs/outputs_manifest.txt` lists all generated files along with their SHA256 "digital fingerprints."
+- [ ] **Deterministic Results**: The performance metrics (AUC, RMSE) match those described in the `final_report.md`.
 
-### 7. What "success" looks like
-- The notebook runs to completion without errors.
-- The `outputs/` folder contains all expected CSV, PNG, and Markdown files.
-- `final_report.md` exists and summarizes the results in human-readable form.
-- `outputs_manifest.txt` confirms that all files were generated deterministically.
-
-### 8. Important notes
-- **Fresh Generation**: Outputs are regenerated and overwritten every time you "Run All".
-- **Input Isolation**: Only the two provided CSV files are used as inputs.
-- **No Data Leakage**: The `lending_club_test.csv` file is an unlabeled hold-out set and is never used for model training or tuning.
+### Important Notes
+- **Input Isolation**: The `lending_club_test.csv` is a hold-out set and is **never** used for training or tuning.
+- **Overwriting**: Every "Run All" execution completely regenerates and overwrites the artifacts in the `outputs/` folder.
