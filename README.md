@@ -23,12 +23,7 @@ Expected artifacts include model comparison tables, tuning tables, threshold swe
 
 While the `outputs/` folder contains the final generated results, the full logic, detailed explanations, and Python code live in `notebooks/credit_risk_project.ipynb`. To see and interact with the code, you should open the notebook in Google Colab rather than just browsing it on GitHub.
 
-### Option 1 — One-click Colab links (recommended)
-You can open the project in Colab using these links:
-- **[Main Branch](https://colab.research.google.com/github/Jannikwendt/credit-risk-ml-mif/blob/main/notebooks/credit_risk_project.ipynb)**: The most recent version of the project.
-- **[Submission Snapshot (submission-v1)](https://colab.research.google.com/github/Jannikwendt/credit-risk-ml-mif/blob/submission-v1/notebooks/credit_risk_project.ipynb)**: An immutable, graded version of the submission. Guarantees a frozen snapshot.
-
-### Option 2 — Manual Colab UI steps
+### Manual Colab UI steps
 1. Go to [https://colab.research.google.com](https://colab.research.google.com)
 2. Click **File** → **Open notebook**
 3. Select the **GitHub** tab
