@@ -1,15 +1,21 @@
-git_commit: 5975910c53b0b566665d1b57356e8e1430ff00e1
+git_commit: f6c34c06dfed153c3fd3e4da317b1fc56d52686f
 files:
-- approval_rate_curve_validation.png | 90.6 KB | f3db6602d94a2146a0b62ce87cb2882d1c7f034c961fee30217ea7fbe57cda7d | Approval rate vs threshold curve.
-- confusion_matrix_validation_050.csv | 0.1 KB | 9e6addae7e9bfe03a2deae2676ee58f2f71d72d57e0cd0e79a5ae6f4459fcefc | Confusion table at threshold=0.50.
-- confusion_matrix_validation_optimal.csv | 0.1 KB | a8ecd98fc81749a2bf75ed5b9a1b89ed712fcb3a71203e0d32483dedb28fa4af | Confusion table at optimal threshold.
-- ev_curve_validation.png | 103.4 KB | 53357c6b73c2ad65c80c8799477a8d3a42027ed7ed7944f7bfb2a806b958e068 | Expected value vs threshold curve.
-- feature_importance_final_model.csv | 3.3 KB | 406430ba3791e5407190ddf368e92401e562dd3e2ca3b3b13d6d20c254170095 | Feature importances for final model.
-- feature_importance_final_model.png | 108.3 KB | fa2b2e2d03840cc86bfd9e07f19322b8c18e74fb36cc90aa04c5b690e18e32e0 | Top-10 feature importance chart.
-- model_card.md | 2.4 KB | bec49a30d037ae00a9758c829c44570c88acc9227fd4e70ebf4a7d9744a69a7a | Executive summary of model, metrics, and policy.
-- model_comparison_validation.csv | 0.3 KB | 84fd3ed2e1cd0b4e23002f3d7d0ee400885fbdd97ff339d92aa789647afee394 | Validation metrics for all models.
-- threshold_sensitivity.csv | 0.2 KB | d6e70f7de7a2f81a841bdeb9a855aff84e71511e72a0cb710e6ad954f5a6b66f | Sensitivity of optimal threshold to payoff shifts.
-- threshold_sweep_validation.csv | 4.0 KB | f4015b3a56e6d008b01e1070054ef65abe673f1c86ca26431827cbdca430422b | Threshold sweep metrics on validation.
+- approval_rate_curve_test.png | 93.0 KB | 654977128c4d86ccc561f0d1ba8057daba67887e054eb1aca0d4bda22e163b43 | Approval rate vs threshold curve (test).
+- approval_rate_curve_validation.png | 92.8 KB | ff91a28cb10c087ac9b9cf860a1e11eadf26aacb8021b0d633eb0f8ef233c35b | Approval rate vs threshold curve.
+- confusion_matrix_test_050.csv | 0.1 KB | ee16467e4af7ac32cd7f9a52b4deab101aebe820de45424dc347f65568356e2b | Test confusion table at threshold=0.50.
+- confusion_matrix_test_optimal.csv | 0.1 KB | dd0302e4d31019429c685e154ef260c6d07a8f23f3161d3478423ca5cb5bc332 | Test confusion table at validation-optimal threshold.
+- confusion_matrix_validation_050.csv | 0.1 KB | 7ec55cded958a019f6142dbc158d7eca734cad9837d54be3ceecb3f9e1014b26 | Confusion table at threshold=0.50.
+- confusion_matrix_validation_optimal.csv | 0.1 KB | d6d8f50fe25902bef88267271b9bf74a63e7afc2b5101730e9c28be77e181be5 | Confusion table at optimal threshold.
+- ev_curve_test.png | 106.9 KB | 2527d52e80397c232f14eacd6f986134bdcbd1f54d74792e800f7bc111dd763e | Expected value vs threshold curve (test).
+- ev_curve_validation.png | 106.5 KB | d6642929b3ed3fd58a61f9ff0d9d2c6d23f6a2f76635347dffe7b1cef98845f6 | Expected value vs threshold curve.
+- feature_importance_final_model.csv | 1.8 KB | 7e57ea57df6a3db7902d2cc5424342fd4ebb2a2a60d8cf6e5d9cd84028faa3dd | Feature importances for final model.
+- feature_importance_final_model.png | 107.3 KB | 745bbefe1d4edb5c44ff33f6c10a34f89613a02d9f2ff55e2ef8e36112472c2b | Top-10 feature importance chart.
+- final_report.md | 2.8 KB | 13c446612716724f3d8ebcd8708e0be2cd6a32809a5524eded6194a01776b300 | Comprehensive project summary report.
+- model_card.md | 2.4 KB | 4a6d26440a8f6224f81eb1b444aa30af0e1ad801d13f8b820bfdb6aa29131a7e | Executive summary of model, metrics, and policy.
+- model_comparison_validation.csv | 0.4 KB | 89a56e337672221a6b8abc2f62dc17d2851f5ec8550ec9f3c842778e6c757e9c | Validation metrics for all models.
+- test_metrics.json | 0.5 KB | 31dbc170fa7407ce18ab2c07719ed9a7ff1545cf3ce057d6aa5d310b3fa5274b | Holdout test metrics (single-use evaluation).
+- threshold_sensitivity.csv | 0.2 KB | 4bebbdb899a90bc23cc439a1d5fbb81bbfc8a70fdb15de464778a851a5aee3e8 | Sensitivity of optimal threshold to payoff shifts.
+- threshold_sweep_validation.csv | 4.4 KB | 7c114aca94fd9b72f3d96e58eb1714e44367577c6eb1c8476dd24b5c657a1a58 | Threshold sweep metrics on validation.
 - tuning_decision_tree.csv | 0.7 KB | 6b8349c84f1d3ec71eee92dae413231114180e367546247c5a13f53e4f40009c | Decision Tree tuning grid results.
-- tuning_gradient_boosting.csv | 0.4 KB | 522dff668d8a956440e6011db9780bd191d7b0273a1140a74b926e790dd41979 | Gradient Boosting tuning grid results.
-- tuning_random_forest.csv | 1.5 KB | fb25632e147e74398ae3e56afebdc08b6e63a9f22b13c3eaa6c36b9a54bfa6e1 | Random Forest tuning grid results.
+- tuning_gradient_boosting.csv | 3.0 KB | a1d3c7e9beafe0f0a10df65b919af1f25c9080eff346ae2f2e4ce769a42d8107 | Gradient Boosting tuning grid results.
+- tuning_random_forest.csv | 3.2 KB | 366ee6ac3a0c6ddf2fd96e8d2f1fb7c27f0d7ef3dc063195c3661fc59322dc65 | Random Forest tuning grid results.

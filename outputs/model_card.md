@@ -25,15 +25,15 @@ Model performance is summarized in `model_comparison_validation.csv`. The final 
 
 ## Final Policy (Validation)
 - Final model: Random Forest
-- Validation AUC: 0.6939
-- Validation RMSE: 0.3793
-- Optimal threshold: 0.29
-- Approval rate: 0.820
-- Expected value: -14
+- Validation AUC: 0.6954
+- Validation RMSE: 0.4625
+- Optimal threshold: 0.58
+- Approval rate: 0.786
+- Expected value: -21
 
 ## Confusion Matrices (Validation)
-- Threshold 0.50: approvals=2529, defaults among approved=486, approval_rate=0.998
-- Optimal threshold: approvals=2076, defaults among approved=303, approval_rate=0.820
+- Threshold 0.50: approvals=1528, defaults among approved=182, approval_rate=0.603
+- Optimal threshold: approvals=1992, defaults among approved=280, approval_rate=0.786
 - Full tables are saved in `confusion_matrix_validation_050.csv` and `confusion_matrix_validation_optimal.csv`.
 
 ## Assumptions & Interpretation
